@@ -2,8 +2,7 @@ from django.http import JsonResponse
 from django.shortcuts import render  # Import render for rendering HTML templates
 import openai
 
-# Set your OpenAI API key
-openai.api_key = "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"
+openai.api_key = settings.OPENAI_API_KEY
 
 def index(request):
     # Render the index.html template
