@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render  # Import render for rendering HTML templates
+from django.conf import settings
 import openai
 
 openai.api_key = settings.OPENAI_API_KEY
