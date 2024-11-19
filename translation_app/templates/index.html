@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Translation App</title>
+
+    <!-- Load static files -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Language Selectors -->
+    <div class="language-select">
+        <select id="inputLanguageSelect">
+            <option value="en-US">English (US)</option>
+            <option value="es-ES">Spanish</option>
+            <option value="fr-FR">French</option>
+            <option value="de-DE">German</option>
+            <option value="zh-CN">Chinese</option>
+            <option value="hi-IN">Hindi</option>
+            <option value="ar-SA">Arabic</option>
+            <option value="ru-RU">Russian</option>
+            <option value="ur-PK">Urdu</option>
+            <option value="it-IT">Italian</option>
+        </select>
+
+        <select id="languageSelect">
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Russian">Russian</option>
+            <option value="Urdu">Urdu</option>
+            <option value="Italian">Italian</option>
+            <option value="English">English</option>
+        </select>
+    </div>
+
+    <h1 class="app-title">Healthcare Translation App</h1>
+
+    <!-- Buttons -->
+    <div class="button-container">
+        <button id="start" class="action-button">Start Recognition</button>
+        <button id="stop" class="action-button">Stop Recognition</button>
+    </div>
+
+    <!-- Transcripts -->
+    <div class="transcripts">
+        <!-- Original Transcript Box -->
+        <div class="transcript-box">
+            <div>
+                <div class="transcript-title">Original Transcript</div>
+                <div id="originalTranscript">Transcript will appear here...</div>
+            </div>
+        </div>
+
+        <!-- Translated Transcript Box -->
+        <div class="transcript-box">
+            <div>
+                <div class="transcript-title">Translated Transcript</div>
+                <div id="translatedTranscript">Translation will appear here...</div>
+            </div>
+            <!-- Play Audio Button -->
+            <button id="playAudio" class="action-button">Play Audio</button>
+        </div>
+    </div>
+    <div id="loadingSpinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    <div class="transcript-history">
+        <h2>Session Transcript History</h2>
+        <div id="historyContainer"></div>
+    </div>
+    
+    
+
+    <!-- CSRF Token -->
+    <input type="hidden" id="csrfToken" value="{{ csrf_token }}">
+
+    <!-- Include JS -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
